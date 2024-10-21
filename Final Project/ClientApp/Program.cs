@@ -1,5 +1,6 @@
 ﻿using SharedLib.Models;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text.Json;
 
 class Program
@@ -46,6 +47,7 @@ class Program
                     Console.WriteLine("Invalid option. Please select from 1 to 5");
                     break;
             }
+            Console.Clear();
         }
     }
 
@@ -139,7 +141,7 @@ class Program
 
 try
 {
-    HttpResponseMessage response = await httpClient.PostAsync("http://localhost:7070/cards", contentString);
+    HttpResponseMessage response = await httpClient.PostAsJsonAsync("http://localhost:7070/cards", contentString, JsonSerializerOptions.Default);
     response.EnsureSuccessStatusCode();
 
     Console.WriteLine("Card added successfully.");

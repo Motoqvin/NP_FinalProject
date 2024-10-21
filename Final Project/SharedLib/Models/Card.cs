@@ -8,8 +8,8 @@ public class Card
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public string OwnerName { get; set; }
-    public string OwnerSurname { get; set; }
+    public string? OwnerName { get; set; }
+    public string? OwnerSurname { get; set; }
     public int CVV { get; set; }
     public decimal Balance { get; set; }
 
